@@ -11,4 +11,7 @@ public interface ArticleRepository {
     Optional<Article> findByTitle(String title);
     Optional<Article> findByWriter(String writer);
     List<Article> findAll();
+
+    // delete
+    void delete(Long id);
 }

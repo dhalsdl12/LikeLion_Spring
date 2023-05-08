@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>LikeLion article List</title>
 </head>
 <body>
-$END$
+<div class="container">
+    <div>
+        <table>
+
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="article : ${articles}">
+                <td th:text="${article.id}"></td>
+                <td>
+                    <a th:href="@{/articles/{id}(id=${article.id})}" th:text="${article.title}"></a>
+                </td>
+                <td th:text="${article.content}"></td>
+                <td th:text="${article.writer}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
 </body>
 </html>

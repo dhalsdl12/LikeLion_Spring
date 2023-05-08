@@ -4,6 +4,7 @@ import crud.crud.spring.domain.Article;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,5 +46,11 @@ public class JpaArticleRepository implements ArticleRepository{
     public List<Article> findAll() {
         List<Article> result = em.createQuery("select a from Article a", Article.class).getResultList();
         return result;
+    }
+
+    @Override
+    public void delete(Long id) {
+        Article article = findById(id).orElseThrow(() -> new EntityNotFoundException("Article not found"));
+        em.remove(article);
     }
 }
