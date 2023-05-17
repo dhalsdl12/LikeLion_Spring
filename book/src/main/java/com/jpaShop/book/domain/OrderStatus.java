@@ -1,2 +1,5 @@
-package com.jpaShop.book.domain;public enum OrderStatus {
+package com.jpaShop.book.domain;
+
+public enum OrderStatus {
+    ORDER, CANCEL
 }
