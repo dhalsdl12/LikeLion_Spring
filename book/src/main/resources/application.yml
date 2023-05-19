@@ -10,7 +10,7 @@ spring:
       ddl-auto: create # 애플리케이션 실행 시점에 테이블 drop, 다시 생성
     properties:
       hibernate:
-        format-sql: true # 로그로 출력되는 SQL문을 보기쉽게 해준다.
+        format_sql: true # 로그로 출력되는 SQL문을 보기쉽게 해준다.
 
 logging.level:
   org.hibernate.SQL: debug # logger 를 통해 하이버네이트 실행 SQL을 남긴다. (쉽게 말해 만들어진 SQL 문 로그로 출력해줌)

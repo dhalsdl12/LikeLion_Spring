@@ -23,4 +23,8 @@ public class OrderItem {
     private Order order;
     private int orderPrice; // 주문 당시 가격
     private int count; // 주문 수량
+
+    public void cancel() {
+        getItem().addStock(count);
+    }
 }
